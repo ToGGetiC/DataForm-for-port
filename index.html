@@ -3,22 +3,23 @@
 
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="site.css">
     <title>ИС Проект: Форма + БД + Excel</title>
 </head>
 
 <body>
     <div class="feedback">
         <form id="feedbackForm">
-            <h3>Отправить в БД</h3>
+            <h3>Форма обратной связи</h3>
             <input type="text" id="name" placeholder="Ваше имя" required>
-            <textarea id="message" placeholder="Сообщение" required></textarea>
+            <input type="email" id="email" placeholder="Ваш E-mail" required>
             <button type="submit">Отправить данные</button>
         </form>
         <button type="button" onclick="exportFromDB()" style="margin-top: 20px;">
             Скачать отчет Excel
         </button>
     </div>
-   
+
 </body>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
@@ -27,4 +28,3 @@
 <script src="site.js"></script>
 
 </html>
-
