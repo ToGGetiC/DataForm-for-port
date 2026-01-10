@@ -8,7 +8,7 @@ form.addEventListener('submit', async(e) => {
     const name = document.getElementById('name').value;
     const message = document.getElementById('message').value;
 
-    const { data, error } = await supabase
+    const { data, error } = await mySupabase
         .from('feedback')
         .insert([{ name, message }]);
 
