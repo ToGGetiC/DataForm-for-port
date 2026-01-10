@@ -21,7 +21,7 @@ form.addEventListener('submit', async(e) => {
 });
 
 async function exportFromDB() {
-    const { data, error } = await supabase
+    const { data, error } = await mySupabase
         .from('feedback')
         .select('*');
     if (error) {
@@ -36,3 +36,4 @@ async function exportFromDB() {
     XLSX.writeFile(workbook, 'feedback_data.xlsx');
 
 }
+
