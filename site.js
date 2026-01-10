@@ -36,4 +36,3 @@ async function exportFromDB() {
     XLSX.writeFile(workbook, 'feedback_data.xlsx');
 
 }
-
