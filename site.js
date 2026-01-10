@@ -8,10 +8,7 @@ form.addEventListener('submit', async(e) => {
     const name = document.getElementById('name').value;
     const message = document.getElementById('message').value;
 
-    const { data, error } = await mySB
-        .from('feedback')
-        .insert([{ name, message }]);
-
+    const { data, error } = await mySB.from('feedback').insert([{ name, message }]);
     if (error) {
         alert('Ошибка при отправке данных: ' + error.message);
     } else {
@@ -36,5 +33,6 @@ async function exportFromDB() {
     XLSX.writeFile(workbook, 'feedback_data.xlsx');
 
 }
+
 
 
