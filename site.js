@@ -6,11 +6,11 @@ const form = document.getElementById('feedbackForm');
 form.addEventListener('submit', async(e) => {
     e.preventDefault();
     const name = document.getElementById('name').value;
-    const message = document.getElementById('message').value;
+    const email = document.getElementById('email').value;
 
-    const { data, error } = await mySB.from('feedback').insert([{ name, message }]);
+    const { data, error } = await mySB.from('feedback').insert([{ name, email }]);
     if (error) {
-        alert('Ошибка при отправке данных: ' + error.message);
+        alert('Ошибка при отправке данных: ' + error.email);
     } else {
         alert('Данные успешно отправлены!');
         form.reset();
@@ -22,7 +22,7 @@ async function exportFromDB() {
         .from('feedback')
         .select('*');
     if (error) {
-        alert('Ошибка при получении данных: ' + error.message);
+        alert('Ошибка при получении данных: ' + error.email);
         return;
     }
 
@@ -33,6 +33,3 @@ async function exportFromDB() {
     XLSX.writeFile(workbook, 'feedback_data.xlsx');
 
 }
-
-
-
