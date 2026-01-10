@@ -14,7 +14,11 @@
             <textarea id="message" placeholder="Сообщение" required></textarea>
             <button type="submit">Отправить данные</button>
         </form>
+        <button type="button" onclick="exportFromDB()" style="margin-top: 20px;">
+            Скачать отчет Excel
+        </button>
     </div>
+   
 </body>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
@@ -23,3 +27,4 @@
 <script src="site.js"></script>
 
 </html>
+
