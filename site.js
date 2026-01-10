@@ -10,7 +10,7 @@ form.addEventListener('submit', async(e) => {
 
     const { data, error } = await mySB.from('feedback').insert([{ name, email }]);
     if (error) {
-        alert('Ошибка при отправке данных: ' + error.email);
+        alert('Ошибка при отправке данных: ' + error.message);
     } else {
         alert('Данные успешно отправлены!');
         form.reset();
@@ -22,7 +22,7 @@ async function exportFromDB() {
         .from('feedback')
         .select('*');
     if (error) {
-        alert('Ошибка при получении данных: ' + error.email);
+        alert('Ошибка при получении данных: ' + error.message);
         return;
     }
 
@@ -33,3 +33,4 @@ async function exportFromDB() {
     XLSX.writeFile(workbook, 'feedback_data.xlsx');
 
 }
+
