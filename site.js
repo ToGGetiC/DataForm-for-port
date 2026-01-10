@@ -1,6 +1,6 @@
 const SUPABASE_URL = 'https://seyjvxfxrxaanrtuvcoz.supabase.co';
 const SUPABASE_KEY = 'sb_publishable_-L-xk1i5gA0NigVphnBSKQ_42qxd3Zb';
-const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+const mySupabase = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
 const form = document.getElementById('feedbackForm');
 form.addEventListener('submit', async(e) => {
@@ -34,4 +34,5 @@ async function exportFromDB() {
     XLSX.utils.book_append_sheet(workbook, worksheet, 'Feedback');
 
     XLSX.writeFile(workbook, 'feedback_data.xlsx');
+
 }
